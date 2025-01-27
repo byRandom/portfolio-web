@@ -1,0 +1,35 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        date: "Actualmente...",
+        title: "Técnico de redes en Entelgy",
+        description:
+        "Mantenimiento y soporte de redes de comunicaciones.",
+    },
+    {
+        date: "Octubre 2023",
+        title: "Técnico de Sistemas en EMPTIC",
+        description:
+        `Mantenimiento y soporte de sistemas informáticos, desarrollo de plugins en Python para CheckMK, 
+        instalación de servicios y aplicaciones, gestion se sistemas linux y windows. 
+        Desarrollo de aplicacion para la gestion de usuarios de Radius en React.`,
+    },
+    {
+        date: "Julio 2021",
+        title: "Técnico on-site en IMDEA Materiales",
+        description:
+        "Mantenimiento y soporte de sistemas informáticos, instalación de servicios y aplicaciones.",
+    },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+    {EXPERIENCE.map(experience => 
+        <li class="mb-10 ms-4">
+            <ExperienceItem {...experience} />
+        </li>
+    )}
+    
+</ol>

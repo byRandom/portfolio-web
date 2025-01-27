@@ -1,0 +1,53 @@
+---
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import '@fontsource-variable/onest'
+import ParticlesComponent from "../components/ParticlesComponent.astro"
+interface Props {
+	title: string,
+	description: string,
+}
+const {title, description} = Astro.props
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description}>
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header/>
+		<ParticlesComponent class="absolute top-0"/>
+			<slot />
+			
+	</body>
+	<Footer/>
+	
+</html>
+
+<style>
+	:root{
+		color-scheme: light dark;
+	}
+	html{
+		font-family: 'Onest Variable', system-ui, sans-serif;
+		scroll-behavior: smooth;
+	}
+	body {
+		background: #050505;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
+</style>

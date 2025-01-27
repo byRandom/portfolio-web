@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro'
+import tomas from '../assets/tomas.avif'
+import LinkedinIcon from '../assets/icons/Linkedin.astro';
+import GitHubIcon from '../assets/icons/GitHub.astro';
+import MailIcon from '../assets/icons/Mail.astro';
+import UserIcon from '../assets/icons/UserIcon.astro';
+import Briefcase from '../assets/icons/Briefcase.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import CodeIcon from '../assets/icons/Code.astro';
+import Projects from '../components/Projects.astro';
+import ParticlesComponent from '../components/ParticlesComponent.astro';
+---
+
+<Layout 
+title="Portfolio de Tomás, Desarrollador y programador web Junior"
+description='Contrata a Tomás para crear tu aplicacion web. Desarrollador Web Junior especializado en JavaScript y React'
+>
+	<main class="px-4 z-10 w-fit mx-auto bg-black/30 border-gray-800/50 border-2 rounded-lg shadow-lg">
+
+		<SectionContainer class="py-44 pb-32">
+			<img src={tomas.src} alt="Tomas" class="rounded-full size-12 mb-4"/>
+			<h1 class="text-white text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+				Hey, soy Tomás <a href="https://www.linkedin.com/in/tomás-pérez-villares-28a4621b9/" target="_blank" rel="noopener" class="flex justify-center items-center">
+					<Badge>Disponible para trabajar</Badge>
+				</a>
+			</h1>
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]"><span class="text-yellow-200/90">Desarrollador web Junior Fullstack.</span>
+				<span class="text-red-100/90">De Madrid, España.</span> <span class="font-bold">En búsqueda de nuevos proyectos.</span> 
+				<span class="opacity-85">Especializado en JavaScript y React</span>
+			</h2>
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/tomás-pérez-villares-28a4621b9/"><LinkedinIcon class="size-4 md:size-6" />LinkedIn</SocialPill>
+				<SocialPill href="https://github.com/byRandom/"><GitHubIcon class="size-4 md:size-6"/>GitHub</SocialPill>
+				<SocialPill href="mailto:tomasperezv11@gmail.com"><MailIcon class="size-4 md:size-6"/>tomasperezv11@gmail.com</SocialPill>
+			</nav>
+		</SectionContainer>
+		<SectionContainer id="experiencia">
+			<h2 class="text-3xl font-semibold text-white mb-6 flex gap-x-2 items-center">
+				<Briefcase class="size-8"/>
+				Experiencia laboral</h2>
+			<Experience/>
+		</SectionContainer>
+		<SectionContainer id="proyectos">
+			<h2 class="text-3xl font-semibold text-white mb-6 flex gap-x-2 items-center">
+				<CodeIcon class="size-8"/>
+				Proyectos</h2>
+			<Projects/>
+		</SectionContainer>
+		<SectionContainer id="sobre-mi">
+			<h2 class="text-3xl font-semibold text-white mb-6 flex gap-x-2 items-center">
+				<UserIcon class="size-8"/>
+				Sobre mí</h2>
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+				¡Buenas! Soy Tomás, un <span class="text-yellow-200/90">Desarrollador Web Junior</span> de Madrid, España.
+				He decidido recientemente dar el salto al desarrollo como <span class="text-red-100/90">carrera profesional</span>, ya que siempre me ha apasionado la tecnología y la programación.
+				Durante mi trayecto me he dedicado a los sistemas y las redes, pero siempre he tenido la inquietud de dedicarme a programar.
+				Actualmente me encuentro en búsqueda activa de empleo, y <span class="font-bold">me encantaría formar parte de tu equipo.</span>
+				¿Quieres saber más sobre mí? 
+				
+				<span class="font-bold">¡Contactame! </span>
+				
+				<span class="opacity-85"></span>
+			</h2>
+		</SectionContainer>
+		<SectionContainer id="contacto">
+			<h2 class="text-3xl font-semibold text-white mb-6 flex gap-x-2 items-center">
+				<MailIcon class="size-8"/>
+				Contacto</h2>
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+				Puedes contactar conmigo en mi <span class="text-sky-500/70"><a href="https://www.linkedin.com/in/tomás-pérez-villares-28a4621b9/">LinkedIn</a></span> o
+				por correo <span class="text-yellow-200"><a href="mailto:tomasperezv11@gmail.com">tomasperezv11@gmail.com</a></span>
+				<span class="font-bold">¡Contactame! </span>
+				
+				<span class="opacity-85"></span>
+			</h2>
+		</SectionContainer>
+	</main>
+</Layout>
