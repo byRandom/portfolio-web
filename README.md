@@ -12,7 +12,13 @@
 
 ## Para compilar el codigo
 
+npm install
 npm run build
+
+Originalmente se creó y compiló el proyecto con bun, para compilarlo con bun:
+
+bun install
+bun run build
 
 El resultado estara en la ruta "dist"
 ##
