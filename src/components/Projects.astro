@@ -1,55 +1,87 @@
 ---
-import portfolio from '../assets/Proyectos/portfolio_web.avif'
-import AstroIcon from '../assets/icons/AstroIcon.astro'
-import TailwindIcon from '../assets/icons/Tailwind.astro'
-import SocialPill from './SocialPill.astro'
+import portfolio from "../assets/Proyectos/portfolio_web.avif";
+import pokedex from "../assets/Proyectos/pokedex.webp";
+import AstroIcon from "../assets/icons/AstroIcon.astro";
+import TailwindIcon from "../assets/icons/Tailwind.astro";
+import ReactIcon from "../assets/icons/React.astro";
+import Nes from "../assets/icons/Nes.astro";
+import SocialPill from "./SocialPill.astro";
 const TAGS = {
     ASTRO: {
-        name: 'Astro',
-        class: 'bg-black text-white',
+        name: "Astro",
+        class: "bg-black text-white",
         icon: AstroIcon,
     },
     TAILWIND: {
-        name: 'TailwindCSS',
-        class: 'bg-[#003159] text-white',
+        name: "TailwindCSS",
+        class: "bg-[#003159] text-white",
         icon: TailwindIcon,
-    }
-}
+    },
+    REACT: {
+        name: "React",
+        class: "bg-[#61DAFB] text-black",
+        icon: ReactIcon,
+    },
+    NESCSS: {
+        name: "NES.css",
+        class: "bg-black text-white",
+        icon: Nes,
+    },
+
+};
 const PROJECTS = [
     {
-        title: 'Portfolio Web de Tomás.',
-        description:'Web desarrollada para mostrar mis proyectos y habilidades como desarrollador web, todo en un mismo sitio.',
-        link: '#',
-        github: 'https://github.com/byRandom/portfolio-web',
+        title: "Portfolio Web de Tomás.",
+        description:
+            "Web desarrollada para mostrar mis proyectos y habilidades como desarrollador web, todo en un mismo sitio.",
+        link: "#",
+        github: "https://github.com/byRandom/portfolio-web",
         image: `${portfolio.src}`,
-        tags: [TAGS.ASTRO, TAGS.TAILWIND,]
-    }
-]
+        tags: [TAGS.ASTRO, TAGS.TAILWIND],
+    },
+    {
+        title: "Pokedex React APP",
+        description:
+            "Aplicación web desarrollada en React para buscar y ver información de los pokemons.",
+        link: "https://pokedex-react-delta-eight.vercel.app",
+        github: "https://github.com/byRandom/pokedex-react",
+        image: `${pokedex.src}`,
+        tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NESCSS],
+    },
+    
+];
 ---
 
 {
-
-    PROJECTS.map(({image, title, description, tags, github}) => (
+    PROJECTS.map(({ image, title, description, tags, github, link }) => (
         <article>
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2" >{title}</h3>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
             <ul class="flex gap-x-4 flex-row mb-2">
-                {
-                    tags.map(tag => (
+                {tags.map((tag) => (
                     <li>
-                        <span class={`flex gap-x2 rounded-full text-xs ${tag.class} py-2 px-1`}>
-                            <tag.icon class="size-4"/>
+                        <span
+                            class={`flex gap-x2 rounded-full text-xs ${tag.class} py-2 px-1`}
+                        >
+                            <tag.icon class="size-4" />
                             {tag.name}
                         </span>
                     </li>
-                    ))
-                }
+                ))}
             </ul>
-            <img class="rounded shadow shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${title}`} />
-            <ul class="flex gap-x-4 flex-row mt-4">
-                <li><SocialPill href={github}>GitHub</SocialPill></li>
+            <img
+                class="rounded shadow shadow-white/10"
+                src={image}
+                alt={`Captura de pantalla del proyecto ${title}`}
+            />
+            <ul class="flex gap-x-4 flex-row mt-4 ">
+                <li>
+                    <SocialPill href={github}>GitHub</SocialPill>
+                </li>
+                <li>
+                    <SocialPill href={link}>Web</SocialPill>
+                </li>
             </ul>
         </article>
     ))
-
 }
